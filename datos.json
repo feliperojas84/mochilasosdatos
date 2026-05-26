@@ -1,5 +1,21 @@
 {
-  "avisos": [],
+  "avisos": [
+    {
+      "id": 1779822371539,
+      "materia": "MATEMÁTICA",
+      "titulo": "Reunion",
+      "objetivo": "Prueba el viernes 24",
+      "actividades": [
+        "Completar guía",
+        "estudiar"
+      ],
+      "materiales_extra": [
+        "Tijeras"
+      ],
+      "fecha_entrega": null,
+      "profesor": "Profesor Rosa"
+    }
+  ],
   "evaluaciones_extra": [],
   "eventos_logistica": [
     {
