@@ -4,15 +4,32 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
-  const { texto } = req.body;
-  if (!texto) return res.status(400).json({ error: "Falta el texto" });
+
+  // Leer body manualmente si viene vacío
+  let texto = "";
+  try {
+    if (req.body && req.body.texto) {
+      texto = req.body.texto;
+    } else {
+      const buffers = [];
+      for await (const chunk of req) buffers.push(chunk);
+      const raw = Buffer.concat(buffers).toString();
+      const parsed = JSON.parse(raw);
+      texto = parsed.texto || "";
+    }
+  } catch(e) {
+    return res.status(400).json({ error: "No se pudo leer el body: " + e.message });
+  }
+
+  if (!texto) return res.status(400).json({ error: "Texto vacío" });
+
   const apiKey = process.env.GEMINI_API_KEY;
   try {
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
       { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: `Extrae información de este correo de Google Classroom chileno. Responde SOLO JSON válido sin markdown ni bloques de código:\n{"materia":"MATERIA EN MAYÚSCULAS (HIST Y GEO, MATEMÁTICA, LENGUAJE, INGLÉS, CS. NATURALES, ARTES, MÚSICA, ED. FÍSICA, TECNOLOGÍA)","titulo":"string","objetivo":"string","actividades":["..."],"materiales_extra":["..."],"fecha_entrega":"YYYY-MM-DD o null","profesor":"string"}\nCorreo: ${texto}` }] }],
+          contents: [{ parts: [{ text: `Extrae información de este correo de Google Classroom chileno. Responde SOLO JSON válido sin markdown:\n{"materia":"MATERIA EN MAYÚSCULAS","titulo":"string","objetivo":"string","actividades":["..."],"materiales_extra":["..."],"fecha_entrega":"YYYY-MM-DD o null","profesor":"string"}\nCorreo: ${texto}` }] }],
           generationConfig: { temperature: 0.1 }
         })
       }
