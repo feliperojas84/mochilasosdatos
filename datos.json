@@ -24,6 +24,13 @@
       "titulo": "Reunión de Apoderados — 19:00 hrs",
       "desc": "Prof. Jefa Ms. Jennifer Oyarzún",
       "color": "#fbbf24"
+    },
+    {
+      "fecha": "2026-06-06",
+      "icon": "📌",
+      "titulo": "Cumple Bea",
+      "desc": "",
+      "color": "#ef4444"
     }
   ]
 }
