@@ -14,6 +14,16 @@
       ],
       "fecha_entrega": null,
       "profesor": "Profesor Rosa"
+    },
+    {
+      "id": 1779833787802,
+      "materia": "TECNOLOGIA",
+      "titulo": "Llevar carton",
+      "objetivo": "Llevar trozos carton",
+      "actividades": [],
+      "materiales_extra": [],
+      "fecha_entrega": "2026-05-28",
+      "profesor": "Miss Camila"
     }
   ],
   "evaluaciones_extra": [],
