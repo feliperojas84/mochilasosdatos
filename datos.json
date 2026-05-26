@@ -2,7 +2,12 @@
   "avisos": [],
   "evaluaciones_extra": [],
   "eventos_logistica": [
-    {"fecha":"2026-05-26","icon":"🕛","titulo":"Salida temprana — 12:00 hrs","desc":"Ciclo de entrevistas de profesores","color":"#ef4444"},
-    {"fecha":"2026-05-26","icon":"👨‍👩‍👧","titulo":"Reunión de Apoderados — 19:00 hrs","desc":"Prof. Jefa Ms. Jennifer Oyarzún","color":"#fbbf24"}
+    {
+      "fecha": "2026-05-26",
+      "icon": "👨‍👩‍👧",
+      "titulo": "Reunión de Apoderados — 19:00 hrs",
+      "desc": "Prof. Jefa Ms. Jennifer Oyarzún",
+      "color": "#fbbf24"
+    }
   ]
 }
