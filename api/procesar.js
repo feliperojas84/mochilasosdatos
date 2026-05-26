@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   const apiKey = process.env.GEMINI_API_KEY;
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
       { method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           contents: [{ parts: [{ text: `Extrae información de este correo de Google Classroom chileno. Responde SOLO JSON válido sin markdown ni bloques de código:\n{"materia":"MATERIA EN MAYÚSCULAS (HIST Y GEO, MATEMÁTICA, LENGUAJE, INGLÉS, CS. NATURALES, ARTES, MÚSICA, ED. FÍSICA, TECNOLOGÍA)","titulo":"string","objetivo":"string","actividades":["..."],"materiales_extra":["..."],"fecha_entrega":"YYYY-MM-DD o null","profesor":"string"}\nCorreo: ${texto}` }] }],
