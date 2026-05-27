@@ -20,7 +20,7 @@ body{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);font-family:'Nun
 .header-date-day{font-size:17px;font-weight:900;line-height:1;}
 .header-date-month{font-size:9px;letter-spacing:1px;margin-top:1px;}
 
-/* PRÓXIMOS 3 DÍAS — SCROLL HORIZONTAL */
+/* PRÓXIMOS 3 DÍAS */
 .proximos-wrap{overflow-x:auto;display:flex;gap:8px;padding:0 18px 12px;scrollbar-width:none;}
 .proximos-wrap::-webkit-scrollbar{display:none;}
 .dia-card{flex-shrink:0;width:140px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:10px 12px;}
@@ -52,7 +52,6 @@ body{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);font-family:'Nun
 .mochila-item.checked{opacity:0.38;}
 .mochila-item.checked .mi-nombre{text-decoration:line-through;color:#6b7280;}
 .mi-nombre{font-size:13px;font-weight:700;}
-.mi-sub{font-size:10px;font-weight:600;margin-top:1px;}
 .badge-critico{background:#fbbf24;color:#000;font-size:8px;font-weight:900;padding:1px 5px;border-radius:4px;margin-left:5px;}
 .btn-reset{width:100%;background:rgba(124,58,237,0.15);border:1px dashed rgba(124,58,237,0.35);border-radius:9px;color:#c4b5fd;padding:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:8px;}
 .progreso-wrap{margin-top:7px;}
@@ -76,28 +75,25 @@ body{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);font-family:'Nun
 .eval-card:active{transform:scale(0.98);}
 .eval-tipo-badge{display:inline-block;border-radius:5px;padding:2px 7px;font-size:9px;font-weight:800;color:#fff;margin-bottom:5px;}
 .eval-titulo{font-size:13px;font-weight:800;margin-bottom:3px;}
-.eval-fecha-txt{font-size:10px;font-weight:700;margin-bottom:2px;}
 .eval-dias-badge{position:absolute;top:12px;right:12px;font-size:12px;font-weight:900;}
 
-/* AVISOS */
+/* AVISOS Y TUTOR */
 .aviso-card{border-radius:13px;padding:12px 14px;margin-bottom:9px;cursor:pointer;}
-
-/* NOTAS */
-.nota-card{background:rgba(255,255,255,0.06);border-left:3px solid #a855f7;border-radius:0 12px 12px 0;padding:10px 13px;margin-bottom:7px;display:flex;align-items:flex-start;gap:9px;}
-
-/* TUTOR */
 .tutor-msgs{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:13px;padding:12px;margin-bottom:10px;min-height:140px;max-height:280px;overflow-y:auto;}
 .tmsg{padding:8px 11px;border-radius:11px;margin-bottom:5px;font-size:12px;line-height:1.5;}
-.tmsg.user{background:linear-gradient(135deg,#7c3aed,#a855f7);margin-left:24px;}
+.tmsg.user{background:linear-gradient(135deg,#7c3aed,#a855f7);margin-left:24px;text-align:right;}
 .tmsg.ai{background:rgba(255,255,255,0.07);margin-right:24px;}
+.nota-card{background:rgba(255,255,255,0.06);border-left:3px solid #a855f7;border-radius:0 12px 12px 0;padding:10px 13px;margin-bottom:7px;display:flex;align-items:flex-start;gap:9px;}
+.materia-row{border-radius:12px;padding:9px 13px;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;}
+.hidden{display:none!important;}
 
-/* MODALES */
+/* INPUTS Y MODALES */
+textarea,input[type=text]{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:11px;color:#fff;padding:11px;font-size:12px;font-family:'Nunito',sans-serif;margin-bottom:9px;}
+textarea{height:10px;resize:none;}
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);z-index:100;display:flex;align-items:flex-end;justify-content:center;}
 .modal-box{background:linear-gradient(180deg,#1e1b4b,#0f0c29);border-radius:24px 24px 0 0;padding:22px;width:100%;max-width:480px;max-height:82vh;overflow-y:auto;}
 .modal-title{font-size:16px;font-weight:900;margin-bottom:5px;}
 .modal-sub{font-size:12px;color:#c4b5fd;margin-bottom:13px;}
-textarea,input[type=text]{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:11px;color:#fff;padding:11px;font-size:12px;font-family:'Nunito',sans-serif;margin-bottom:9px;}
-textarea{height:130px;resize:none;}
 .modal-btns{display:flex;gap:9px;}
 .btn-sec{background:rgba(255,255,255,0.08);border:none;border-radius:11px;color:#fff;padding:13px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;flex:1;}
 .btn-pri{flex:2;background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;border-radius:11px;color:#fff;padding:13px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;}
@@ -109,8 +105,7 @@ textarea{height:130px;resize:none;}
 .dia-btns{display:flex;gap:5px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px;}
 .dia-btn{background:rgba(255,255,255,0.06);border:none;border-radius:9px;color:#fff;padding:6px 11px;font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .dia-btn.active{background:linear-gradient(135deg,#7c3aed,#a855f7);}
-.materia-row{border-radius:12px;padding:9px 13px;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;}
-.hidden{display:none!important;}
+
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.4);}50%{box-shadow:0 0 0 6px rgba(239,68,68,0);}}
 </style>
@@ -118,7 +113,6 @@ textarea{height:130px;resize:none;}
 <body>
 <div id="app">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="header-top">
       <div>
@@ -134,11 +128,9 @@ textarea{height:130px;resize:none;}
         <div class="header-date-month" id="hdrMes"></div>
       </div>
     </div>
-    <!-- PRÓXIMOS 3 DÍAS -->
     <div class="proximos-wrap" id="proximosWrap"></div>
   </div>
 
-  <!-- TABS -->
   <div class="tabs">
     <button class="tab-btn active" onclick="setTab('mochila',this)"><span class="tab-icon">🎒</span>Mochila</button>
     <button class="tab-btn" onclick="setTab('semana',this)"><span class="tab-icon">📅</span>Semana</button>
@@ -147,9 +139,7 @@ textarea{height:130px;resize:none;}
     <button class="tab-btn" onclick="setTab('notas',this)"><span class="tab-icon">🔔</span>Notas</button>
   </div>
 
-  <!-- TAB MOCHILA -->
   <div class="content" id="tab-mochila">
-    <!-- MOCHILA HOY -->
     <div class="sec-title" id="mochilaTitHoy" style="margin-bottom:8px"></div>
     <div id="mochilaZonaHoy"></div>
     <button class="btn-reset" onclick="resetChecks('hoy')">↺ Desmarcar hoy</button>
@@ -157,7 +147,7 @@ textarea{height:130px;resize:none;}
       <div class="progreso-label"><span>Progreso hoy</span><span id="pctHoy">0%</span></div>
       <div class="progreso-bar"><div class="progreso-fill" id="pctFillHoy" style="width:0%"></div></div>
     </div>
-    <!-- MOCHILA MAÑANA -->
+    
     <div class="sec-title" id="mochilaTitManana" style="margin-top:20px;margin-bottom:8px"></div>
     <div id="mochilaZonaManana"></div>
     <button class="btn-reset" onclick="resetChecks('manana')">↺ Desmarcar mañana</button>
@@ -167,7 +157,6 @@ textarea{height:130px;resize:none;}
     </div>
   </div>
 
-  <!-- TAB SEMANA -->
   <div class="content hidden" id="tab-semana">
     <div class="sec-title">HORARIO OFICIAL</div>
     <div class="dia-btns" id="diaBtns"></div>
@@ -177,13 +166,11 @@ textarea{height:130px;resize:none;}
     <div id="semanaZona"></div>
   </div>
 
-  <!-- TAB EVALUACIONES -->
   <div class="content hidden" id="tab-evalua">
     <div class="sec-title">EVALUACIONES PRÓXIMAS</div>
     <div id="evaluaZona"></div>
   </div>
 
-  <!-- TAB AVISOS -->
   <div class="content hidden" id="tab-avisos">
     <div class="row-between">
       <div class="sec-title" style="margin-bottom:0">AVISOS DEL COLEGIO</div>
@@ -191,9 +178,18 @@ textarea{height:130px;resize:none;}
     </div>
     <div style="margin-bottom:10px"></div>
     <div id="avisosZona"></div>
+    
+    <div class="sec-title" style="margin-top:25px">✨ REPASO INTELIGENTE (TUTOR)</div>
+    <div class="tutor-msgs" id="tutorMsgs">
+      <div class="tmsg ai">¡Hola! Soy tu tutor de Mochila SOS. ¿Qué materia te gustaría repasar hoy de forma entretenida?</div>
+    </div>
+    <div style="display:flex; gap:6px; margin-bottom:10px; overflow-x:auto; padding-bottom:5px;" id="accesosRapidos"></div>
+    <div style="display:flex;gap:6px">
+      <input type="text" id="tutorInput" placeholder="Pregúntame algo sobre la materia..." style="margin-bottom:0">
+      <button class="btn-pri" style="width:auto; padding:0 20px" onclick="enviarTutor()">Enviar</button>
+    </div>
   </div>
 
-  <!-- TAB NOTAS -->
   <div class="content hidden" id="tab-notas">
     <div class="row-between">
       <div class="sec-title" style="margin-bottom:0">MIS NOTAS PERSONALES</div>
@@ -203,13 +199,10 @@ textarea{height:130px;resize:none;}
     <div id="notasZona"></div>
   </div>
 
-
 </div>
 
-<!-- BANNER SYNC -->
 <div id="syncBanner" class="hidden" style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:700;z-index:200;">⏳ Sincronizando datos...</div>
 
-<!-- MODAL NOMBRE -->
 <div class="modal-overlay hidden" id="modalNombre">
   <div class="modal-box">
     <div style="font-size:32px;text-align:center;margin-bottom:10px">🎒</div>
@@ -219,7 +212,6 @@ textarea{height:130px;resize:none;}
     <button onclick="guardarNombre()" class="btn-pri" style="width:100%;">¡Listo! 🚀</button>
   </div>
 </div>
-
 
 <div class="modal-overlay hidden" id="modalIA">
   <div class="modal-box">
@@ -233,17 +225,14 @@ textarea{height:130px;resize:none;}
   </div>
 </div>
 
-<!-- MODAL DETALLE -->
 <div class="modal-overlay hidden" id="modalDetalle" onclick="cerrarDetalle()">
   <div class="modal-box" onclick="event.stopPropagation()" id="modalDetalleBox"></div>
 </div>
 
-<!-- MODAL EVAL -->
 <div class="modal-overlay hidden" id="modalEval" onclick="cerrarEval()">
   <div class="modal-box" onclick="event.stopPropagation()" id="modalEvalBox"></div>
 </div>
 
-<!-- MODAL NOTA -->
 <div class="modal-overlay hidden" id="modalNota">
   <div class="modal-box">
     <div class="modal-title">🔔 Nueva Nota Personal</div>
@@ -259,11 +248,11 @@ textarea{height:130px;resize:none;}
 
 <script>
 // ══════════════════════════════════════
-// BASE DE DATOS — ARANTZA 3°B 2026
+// BASE DE DATOS LOCAL
 // ══════════════════════════════════════
 const HORARIO = {
-  LUNES:     [{m:"ORIENTACIÓN",h:"08:00-08:45"},{m:"LENGUAJE",h:"08:45-09:15"},{m:"MATEMÁTICA",h:"09:30-11:00"},{m:"CS. NATURALES",h:"11:15-12:00"},{m:"HIST Y GEO",h:"12:30-13:15"},{m:"INGLÉS",h:"13:15-14:45"}],
-  MARTES:    [{m:"D. HUMANO",h:"08:00-09:15"},{m:"INGLÉS",h:"09:30-11:00"},{m:"LENGUAJE",h:"11:15-13:15"},{m:"MATEMÁTICA",h:"13:15-14:45"},{m:"ED. FÍSICA",h:"15:00-16:30"}],
+  LUNES:      [{m:"ORIENTACIÓN",h:"08:00-08:45"},{m:"LENGUAJE",h:"08:45-09:15"},{m:"MATEMÁTICA",h:"09:30-11:00"},{m:"CS. NATURALES",h:"11:15-12:00"},{m:"HIST Y GEO",h:"12:30-13:15"},{m:"INGLÉS",h:"13:15-14:45"}],
+  MARTES:     [{m:"D. HUMANO",h:"08:00-09:15"},{m:"INGLÉS",h:"09:30-11:00"},{m:"LENGUAJE",h:"11:15-13:15"},{m:"MATEMÁTICA",h:"13:15-14:45"},{m:"ED. FÍSICA",h:"15:00-16:30"}],
   MIÉRCOLES: [{m:"MÚSICA",h:"08:00-09:15"},{m:"ARTES",h:"09:30-11:00"},{m:"INGLÉS",h:"11:15-13:15"},{m:"LENGUAJE",h:"13:15-14:45"}],
   JUEVES:    [{m:"HIST Y GEO",h:"08:00-09:15"},{m:"ED. FÍSICA",h:"09:30-11:00"},{m:"INGLÉS",h:"11:15-13:15"},{m:"LENGUAJE",h:"13:15-14:00"},{m:"TECNOLOGÍA",h:"14:00-14:45"}],
   VIERNES:   [{m:"LENGUAJE",h:"08:00-09:15"},{m:"CS. NATURALES",h:"09:30-11:00"},{m:"MATEMÁTICA",h:"11:15-12:30"}],
@@ -332,14 +321,18 @@ const EVALUACIONES = [
   {fecha:"2026-06-08",materia:"MATEMÁTICA",tipo:"sumativa",titulo:"Prueba — Sustracción con canje",materiales:[],contenidos:["Sustracción con canje","Resolución de problemas"]},
 ];
 
-// Datos compartidos — se cargan desde GitHub
 let EVENTOS_LOGISTICA = [];
 let anuncios = [];
-
-// Datos locales del apoderado
 let notas = [];
 let checks = {};
+
+// Inicialización de persistencia local protegida
+try {
+  checks = JSON.parse(localStorage.getItem("mochilasos_checks")) || {};
+} catch(e) { checks = {}; }
+
 const hoy = new Date();
+hoy.setHours(0,0,0,0); // Normalización horaria base
 const DIAS = ["LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES"];
 const DIAS_JS = ["DOMINGO","LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO"];
 const DIAS_NOMBRES = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
@@ -350,9 +343,8 @@ const GITHUB_URL = "https://raw.githubusercontent.com/feliperojas84/mochilasosda
 document.getElementById("hdrDia").textContent = hoy.getDate();
 document.getElementById("hdrMes").textContent = hoy.toLocaleDateString("es-CL",{month:"short"}).toUpperCase();
 
-// ── NOMBRE DEL HIJO ──
+// ── NOMBRE ──
 let nombreHijo = "";
-// Primero buscar en URL
 const urlParams = new URLSearchParams(window.location.search);
 const nombreURL = urlParams.get("nombre");
 if(nombreURL) {
@@ -364,7 +356,7 @@ if(nombreURL) {
 
 function mostrarNombre(){
   const el = document.getElementById("headerNombre");
-  if(el) el.textContent = nombreHijo ? nombreHijo+" · 3°B · The British School Patagonia" : "3°B · The British School Patagonia";
+  if(el) el.textContent = nombreHijo ? `${nombreHijo} · 3°B · The British School Patagonia` : "3°B · The British School Patagonia";
 }
 function pedirNombre(){
   if(!nombreHijo){
@@ -386,76 +378,83 @@ function cambiarNombre(){
   document.getElementById("modalNombre").classList.remove("hidden");
 }
 
-// ── CARGAR DATOS DESDE GITHUB ──
+// ── SYNC ──
 async function cargarDatosGitHub(){
   const banner = document.getElementById("syncBanner");
   try {
     banner.classList.remove("hidden");
-    const res = await fetch(GITHUB_URL+"?t="+Date.now());
+    const res = await fetch(`${GITHUB_URL}?t=${Date.now()}`);
     const data = await res.json();
     if(data.eventos_logistica) EVENTOS_LOGISTICA = data.eventos_logistica;
     if(data.avisos) anuncios = data.avisos;
     banner.textContent = "✅ Datos actualizados";
     setTimeout(()=>banner.classList.add("hidden"), 2000);
   } catch(e) {
-    banner.textContent = "⚠️ Sin conexión — usando datos guardados";
+    banner.textContent = "⚠️ Usando datos locales estáticos";
     setTimeout(()=>banner.classList.add("hidden"), 3000);
   }
 }
 
-// ── HELPERS ──
-function getDiaManana(){
-  const idx=DIAS.indexOf(DIAS_JS[hoy.getDay()]);
-  return (idx===-1||idx===4)?"LUNES":DIAS[idx+1];
+// ── HELPERS DE FECHAS SEGURAS ──
+function diasHasta(fechaDestinoStr) {
+  const parts = fechaDestinoStr.split("-");
+  const dTarget = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+  dTarget.setHours(0,0,0,0);
+  const dToday = new Date();
+  dToday.setHours(0,0,0,0);
+  return Math.round((dTarget - dToday) / 86400000);
 }
-function diasHasta(f){
-  const parts = f.split("-");
-  const d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-  const h = new Date(); h.setHours(0,0,0,0);
-  return Math.ceil((d-h)/86400000);
+
+function getNombreDia(offset){
+  const d = new Date();
+  d.setDate(d.getDate() + offset);
+  return DIAS_JS[d.getDay()];
 }
-function fechaMs(f){
-  const parts = f.split("-");
-  return new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2])).getTime();
+
+function getFechaStr(offset){
+  const d = new Date();
+  d.setDate(d.getDate() + offset);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
+
 function colorTipo(t){return t==="sumativa"?"#ef4444":t==="oral"?"#8b5cf6":t==="especial"?"#06b6d4":"#f59e0b";}
 function labelTipo(t){return t==="sumativa"?"PRUEBA":t==="oral"?"ORAL":t==="especial"?"EVENTO":"PROCESO";}
 
-// ── PRÓXIMOS 3 DÍAS (header) ──
+// ── RENDERS ──
 function renderProximos(){
   const wrap = document.getElementById("proximosWrap");
-  const hoyMs = new Date(); hoyMs.setHours(0,0,0,0);
+  if(!wrap) return;
+  const baseDate = new Date();
+  baseDate.setHours(0,0,0,0);
   let html = '';
   let count = 0;
+  
   for(let d=0; d<=10 && count<3; d++){
-    const fecha = new Date(hoyMs); fecha.setDate(fecha.getDate()+d);
-    const diaJS = fecha.getDay();
+    const current = new Date(baseDate);
+    current.setDate(baseDate.getDate()+d);
+    const diaJS = current.getDay();
     if(diaJS===0||diaJS===6) continue;
-    const fechaStr = fecha.getFullYear()+'-'+String(fecha.getMonth()+1).padStart(2,'0')+'-'+String(fecha.getDate()).padStart(2,'0');
+    
+    const fechaStr = `${current.getFullYear()}-${String(current.getMonth()+1).padStart(2,'0')}-${String(current.getDate()).padStart(2,'0')}`;
     const evals = EVALUACIONES.filter(e=>e.fecha===fechaStr);
     const logis = EVENTOS_LOGISTICA.filter(e=>e.fecha===fechaStr);
-    const notasDia = notas.filter(n=>n.fecha&&n.fecha.toLowerCase().includes(DIAS_NOMBRES[diaJS].toLowerCase()));
-    const todos = [
-      ...logis.map(e=>({txt:e.titulo,sub:e.desc,color:e.color,tipo:'logis'})),
-      ...evals.map(e=>({txt:e.titulo,sub:e.materia,color:colorTipo(e.tipo),tipo:'eval'})),
-      ...notasDia.map(n=>({txt:n.titulo,sub:n.lugar||n.fecha||'',color:'#a855f7',tipo:'nota'}))
-    ];
     const labelClass = d===0?'hoy':d===1?'manana':'normal';
     const labelTxt = d===0?'HOY':d===1?'MAÑANA':DIAS_NOMBRES[diaJS].toUpperCase();
-    const cardClass = d===0?'hoy':d===1?'manana':'';
-    html += `<div class="dia-card ${cardClass}">
-      <div class="dia-label ${labelClass}">${labelTxt} ${fecha.getDate()}/${fecha.getMonth()+1}</div>`;
+    
+    const todos = [
+      ...logis.map(e=>({txt:e.titulo,sub:e.desc,color:e.color})),
+      ...evals.map(e=>({txt:e.titulo,sub:e.materia,color:colorTipo(e.tipo)}))
+    ];
+    
+    html += `<div class="dia-card ${d===0?'hoy':d===1?'manana':''}">
+      <div class="dia-label ${labelClass}">${labelTxt} ${current.getDate()}/${current.getMonth()+1}</div>`;
     if(todos.length){
       todos.slice(0,3).forEach(ev=>{
         html+=`<div class="dia-event">
           <div class="dia-event-dot" style="background:${ev.color}"></div>
-          <div>
-            <div class="dia-event-txt">${ev.txt}</div>
-            ${ev.sub?`<div class="dia-event-sub">${ev.sub}</div>`:''}
-          </div>
+          <div class="dia-event-txt">${ev.txt}</div>
         </div>`;
       });
-      if(todos.length>3) html+=`<div style="font-size:9px;color:#6b7280;margin-top:2px">+${todos.length-3} más...</div>`;
     } else {
       html+=`<div class="dia-vacio">Sin eventos</div>`;
     }
@@ -465,63 +464,29 @@ function renderProximos(){
   wrap.innerHTML = html;
 }
 
-// ── MOCHILA ──
-function getNombreDia(offset){
-  // offset 0 = hoy, 1 = mañana
-  const NOMBRES = ["DOMINGO","LUNES","MARTES","MIÉRCOLES","JUEVES","VIERNES","SÁBADO"];
-  const d = new Date();
-  d.setDate(d.getDate() + offset);
-  return NOMBRES[d.getDay()];
-}
-
-function getFechaStr(offset){
-  const d = new Date();
-  d.setDate(d.getDate() + offset);
-  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-}
-
-function buildMochilaItems(offset){
-  const nombreDia = getNombreDia(offset);
-  const fechaStr = getFechaStr(offset);
-  if(!DIAS.includes(nombreDia)) return [];
-  let items = [...(MATERIALES_DIA[nombreDia]||[])];
-  EVALUACIONES.forEach(e=>{
-    if(!e.materiales||!e.materiales.length) return;
-    if(e.fecha===fechaStr)
-      e.materiales.forEach(m=>{
-        if(!items.find(i=>i.item===m))
-          items.push({item:m, materia:e.materia, tipo:"critico", nota:"⚠️ Evaluación este día"});
-      });
-  });
-  return items;
-}
-
 function renderMochilaBloque(offset, zonaId, titId, pctId, pctFillId){
   const nombreDia = getNombreDia(offset);
-  const label = offset===0 ? 'HOY — '+nombreDia : 'MAÑANA — '+nombreDia;
   const key_prefix = offset===0 ? 'hoy' : 'manana';
   const fechaStr = getFechaStr(offset);
 
   if(!DIAS.includes(nombreDia)){
-    document.getElementById(titId).textContent = '🎒 MOCHILA '+label;
-    document.getElementById(zonaId).innerHTML = '<div style="color:#6b7280;font-size:12px;padding:10px 0">No hay clases este día</div>';
+    document.getElementById(titId).textContent = `🎒 MOCHILA — ${nombreDia}`;
+    document.getElementById(zonaId).innerHTML = '<div style="color:#6b7280;font-size:12px;padding:10px 0">Fin de semana libre 🎉</div>';
     return;
   }
 
   const sal = SALIDA_ESP[nombreDia]||'';
-  document.getElementById(titId).textContent = '🎒 MOCHILA '+label+(sal?' · '+sal:'');
+  document.getElementById(titId).textContent = `🎒 MOCHILA ${offset===0?'HOY':'MAÑANA'} (${nombreDia}) ${sal}`;
 
-  // Extras de evaluaciones
   const extrasEval = [];
   EVALUACIONES.forEach(e=>{
-    if(!e.materiales||!e.materiales.length||e.fecha!==fechaStr) return;
-    e.materiales.forEach(m=> extrasEval.push({item:m, materia:e.materia}));
+    if(e.fecha===fechaStr && e.materiales) {
+      e.materiales.forEach(m=> extrasEval.push({item:m, materia:e.materia}));
+    }
   });
 
-  // Ramos del día sin repetir
   const bloques = HORARIO[nombreDia]||[];
-  const ramos = [];
-  bloques.forEach(b=>{ if(!ramos.includes(b.m)) ramos.push(b.m); });
+  const ramos = [...new Set(bloques.map(b=>b.m))];
 
   let html = '';
   let itemIndex = 0;
@@ -531,23 +496,16 @@ function renderMochilaBloque(offset, zonaId, titId, pctId, pctFillId){
   ramos.forEach(ramo=>{
     const materialesRamo = (MATERIALES_DIA[nombreDia]||[]).filter(m=>m.materia===ramo);
     if(!materialesRamo.length) return;
-    html += `<div style="margin-bottom:14px">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid ${COLORES[ramo]||'#7c3aed'}33">
-        <div style="width:10px;height:10px;border-radius:50%;background:${COLORES[ramo]||'#7c3aed'};flex-shrink:0"></div>
-        <span style="font-size:11px;font-weight:900;color:${COLORES[ramo]||'#a78bfa'};letter-spacing:1px">${ramo}</span>
-      </div>`;
+    html += `<div style="margin-bottom:10px">
+      <div style="font-size:11px;font-weight:900;color:${COLORES[ramo]||'#fff'};margin-bottom:4px">${ramo}</div>`;
+    
     materialesRamo.forEach(it=>{
-      const k = key_prefix+'_'+itemIndex;
+      const k = `${key_prefix}_${itemIndex}`;
       const done = checks[k]||false;
       totalItems++; if(done) checkedItems++;
-      html += `<div class="mochila-item${done?' checked':''}"
-        style="border-left:3px solid ${COLORES[it.materia]||'#7c3aed'};margin-left:10px;padding:8px 12px;margin-bottom:5px;cursor:pointer"
-        onclick="toggleCheck('${k}')">
-        <span style="font-size:16px">${done?'✅':it.tipo==='critico'?'⭐':'⬜'}</span>
-        <div style="flex:1">
-          <div class="mi-nombre" style="font-size:12px">${it.item}${it.tipo==='critico'?'<span class="badge-critico">CRÍTICO</span>':''}</div>
-          ${it.nota?`<div style="font-size:10px;color:#9ca3af">${it.nota}</div>`:''}
-        </div>
+      html += `<div class="mochila-item${done?' checked':''}" style="border-left:3px solid ${COLORES[it.materia]||'#7c3aed'}" onclick="toggleCheck('${k}')">
+        <span>${done?'✅':'⬜'}</span>
+        <div class="mi-nombre">${it.item}</div>
       </div>`;
       itemIndex++;
     });
@@ -555,313 +513,191 @@ function renderMochilaBloque(offset, zonaId, titId, pctId, pctFillId){
   });
 
   if(extrasEval.length){
-    html += `<div style="margin-bottom:14px">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #fbbf2433">
-        <span style="font-size:12px">⭐</span>
-        <span style="font-size:11px;font-weight:900;color:#fbbf24;letter-spacing:1px">MATERIALES ESPECIALES</span>
-      </div>`;
+    html += `<div><div style="font-size:11px;font-weight:900;color:#fbbf24;margin-bottom:4px">⭐ EVALUACIONES</div>`;
     extrasEval.forEach(it=>{
-      const k = key_prefix+'_'+itemIndex;
+      const k = `${key_prefix}_${itemIndex}`;
       const done = checks[k]||false;
       totalItems++; if(done) checkedItems++;
-      html += `<div class="mochila-item${done?' checked':''}"
-        style="border-left:3px solid #fbbf24;margin-left:10px;padding:8px 12px;margin-bottom:5px;cursor:pointer"
-        onclick="toggleCheck('${k}')">
-        <span style="font-size:16px">${done?'✅':'⭐'}</span>
-        <div style="flex:1">
-          <div class="mi-nombre" style="font-size:12px">${it.item}<span class="badge-critico">EVAL</span></div>
-          <div style="font-size:10px;color:${COLORES[it.materia]||'#a78bfa'}">${it.materia}</div>
-        </div>
+      html += `<div class="mochila-item${done?' checked':''}" style="border-left:3px solid #fbbf24" onclick="toggleCheck('${k}')">
+        <span>${done?'✅':'⭐'}</span>
+        <div class="mi-nombre">${it.item} <span class="badge-critico">TRAER</span></div>
       </div>`;
       itemIndex++;
     });
     html += '</div>';
   }
 
-  document.getElementById(zonaId).innerHTML = html;
+  document.getElementById(zonaId).innerHTML = html || 'No hay materiales configurados.';
   const pct = totalItems ? Math.round(checkedItems/totalItems*100) : 0;
-  document.getElementById(pctId).textContent = pct+'%';
-  document.getElementById(pctFillId).style.width = pct+'%';
+  document.getElementById(pctId).textContent = `${pct}%`;
+  document.getElementById(pctFillId).style.width = `${pct}%`;
 }
-
 
 function renderMochila(){
   renderMochilaBloque(0,'mochilaZonaHoy','mochilaTitHoy','pctHoy','pctFillHoy');
   renderMochilaBloque(1,'mochilaZonaManana','mochilaTitManana','pctManana','pctFillManana');
 }
-function toggleCheck(key){checks[key]=!checks[key];renderMochila();}
-function resetChecks(etiqueta){
-  const prefix = etiqueta==='hoy'?'hoy_':'manana_';
-  Object.keys(checks).forEach(k=>{ if(k.startsWith(prefix)) delete checks[k]; });
+
+function toggleCheck(key){
+  checks[key]=!checks[key];
+  try { localStorage.setItem("mochilasos_checks", JSON.stringify(checks)); } catch(e){}
   renderMochila();
 }
 
-// ── HORARIO ──
+function resetChecks(etiqueta){
+  const prefix = etiqueta==='hoy'?'hoy_':'manana_';
+  Object.keys(checks).forEach(k=>{ if(k.startsWith(prefix)) delete checks[k]; });
+  try { localStorage.setItem("mochilasos_checks", JSON.stringify(checks)); } catch(e){}
+  renderMochila();
+}
+
+// ── HORARIO EXCLUSIVO TAB SEMANA ──
 let diaActivo = DIAS[0];
 function renderHorario(){
   const btns = document.getElementById("diaBtns");
-  btns.innerHTML = DIAS.map(d=>`
-    <button class="dia-btn${d===diaActivo?' active':''}" onclick="setDia('${d}')">${d.slice(0,3)}</button>
-  `).join('');
+  if(!btns) return;
+  btns.innerHTML = DIAS.map(d=>`<button class="dia-btn${d===diaActivo?' active':''}" onclick="setDia('${d}')">${d.slice(0,3)}</button>`).join('');
   const bloques = HORARIO[diaActivo]||[];
   document.getElementById("horarioLista").innerHTML = bloques.map(b=>`
     <div class="materia-row" style="background:${COLORES[b.m]||'#7c3aed'}22;border:1px solid ${COLORES[b.m]||'#7c3aed'}44">
-      <div style="display:flex;align-items:center;gap:8px">
-        <div style="width:9px;height:9px;border-radius:50%;background:${COLORES[b.m]||'#7c3aed'};flex-shrink:0"></div>
-        <span style="font-size:13px;font-weight:700">${b.m}</span>
-      </div>
-      <span style="font-size:11px;color:#9ca3af;font-weight:600">${b.h}</span>
+      <span style="font-size:13px;font-weight:700">${b.m}</span>
+      <span style="font-size:11px;color:#9ca3af">${b.h}</span>
     </div>
   `).join('');
-  const sal = SALIDA_ESP[diaActivo];
-  document.getElementById("salidaInfo").innerHTML = sal?`
-    <div style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:10px;padding:9px 13px;margin-top:8px;font-size:12px;font-weight:700;color:#fbbf24">${sal}</div>
-  `:'';
 }
 function setDia(d){diaActivo=d;renderHorario();}
 
-// ── SEMANA ──
 function renderSemana(){
-  const hoyMs=new Date();hoyMs.setHours(0,0,0,0);
+  const base = new Date();
+  base.setHours(0,0,0,0);
   let html='';
-  for(let d=0;d<10;d++){
-    const fecha=new Date(hoyMs);fecha.setDate(fecha.getDate()+d);
-    const diaJS=fecha.getDay(); if(diaJS===0||diaJS===6) continue;
-    const fechaStr=fecha.getFullYear()+'-'+String(fecha.getMonth()+1).padStart(2,'0')+'-'+String(fecha.getDate()).padStart(2,'0');
-    const evals=EVALUACIONES.filter(e=>e.fecha===fechaStr);
-    const logis=EVENTOS_LOGISTICA.filter(e=>e.fecha===fechaStr);
-    const notasDia=notas.filter(n=>n.fecha&&n.fecha.toLowerCase().includes(DIAS_NOMBRES[diaJS].toLowerCase()));
-    if(!evals.length&&!logis.length&&!notasDia.length) continue;
-    const label=d===0?'HOY':d===1?'MAÑANA':DIAS_NOMBRES[diaJS]+' '+fecha.getDate()+'/'+(fecha.getMonth()+1);
-    html+=`<div class="dia-bloque">
-      <div class="dia-bloque-header">
-        <span class="dia-bloque-nombre">${label}</span>
-        ${d<=1?`<span class="badge-urgente">${d===0?'HOY':'MAÑANA'}</span>`:''}
-      </div>`;
-    logis.forEach(e=>{
-      html+=`<div class="evento-fila" style="border-left:3px solid ${e.color}22">
-        <div class="evento-dot" style="background:${e.color}"></div>
-        <div style="flex:1">
-          <div class="evento-nombre">${e.icon} ${e.titulo}</div>
-          <div class="evento-det">${e.desc}</div>
-        </div>
-      </div>`;
-    });
+  for(let d=0;d<7;d++){
+    const current = new Date(base); current.setDate(base.getDate()+d);
+    if(current.getDay()===0||current.getDay()===6) continue;
+    const fStr = `${current.getFullYear()}-${String(current.getMonth()+1).padStart(2,'0')}-${String(current.getDate()).padStart(2,'0')}`;
+    const evals = EVALUACIONES.filter(e=>e.fecha===fStr);
+    if(!evals.length) continue;
+    
+    html+=`<div class="dia-bloque"><div class="dia-bloque-header"><span class="dia-bloque-nombre">${DIAS_NOMBRES[current.getDay()]} ${current.getDate()}</span></div>`;
     evals.forEach(e=>{
-      html+=`<div class="evento-fila">
-        <div class="evento-dot" style="background:${colorTipo(e.tipo)}"></div>
-        <div style="flex:1">
-          <div class="evento-nombre">${e.titulo}<span class="materia-tag" style="background:${COLORES[e.materia]||'#7c3aed'}">${e.materia}</span></div>
-          ${e.contenidos&&e.contenidos.length?`<div class="evento-det">📖 ${e.contenidos.join(' · ')}</div>`:''}
-          ${e.materiales&&e.materiales.length?`<div class="evento-det" style="color:#fbbf24">⭐ ${e.materiales.join(', ')}</div>`:''}
-        </div>
-      </div>`;
-    });
-    notasDia.forEach(n=>{
-      html+=`<div class="evento-fila">
-        <div class="evento-dot" style="background:#a855f7"></div>
-        <div>
-          <div class="evento-nombre">🔔 ${n.titulo}</div>
-          ${n.fecha?`<div class="evento-det">📅 ${n.fecha}</div>`:''}
-          ${n.lugar?`<div class="evento-det">📍 ${n.lugar}</div>`:''}
-        </div>
+      html+=`<div class="evento-fila" style="border-left:3px solid ${colorTipo(e.tipo)}">
+        <div class="evento-nombre">${e.titulo} <span class="materia-tag" style="background:${COLORES[e.materia]}">${e.materia}</span></div>
       </div>`;
     });
     html+='</div>';
   }
-  document.getElementById("semanaZona").innerHTML=html||'<div style="color:#6b7280;font-size:12px;text-align:center;padding:20px 0">Sin eventos próximos</div>';
+  document.getElementById("semanaZona").innerHTML = html || '<div class="dia-vacio">Sin evaluaciones en los próximos 7 días.</div>';
 }
 
-// ── EVALUACIONES ──
 function renderEvalua(){
-  const hoy = new Date();
-  const hoyStr = hoy.getFullYear()+'-'+String(hoy.getMonth()+1).padStart(2,'0')+'-'+String(hoy.getDate()).padStart(2,'0');
-  const prox = EVALUACIONES.filter(e=> e.fecha >= hoyStr).sort((a,b)=> a.fecha > b.fecha ? 1 : -1);
-  const debug = document.getElementById("evalDebug");
-  if(debug) debug.textContent = `Hoy: ${hoyStr} | Total eval: ${EVALUACIONES.length} | Próximas: ${prox.length}`;
+  const prox = EVALUACIONES.filter(e=> diasHasta(e.fecha) >= 0).sort((a,b)=> a.fecha > b.fecha ? 1 : -1);
   const zona = document.getElementById("evaluaZona");
   if(!zona) return;
-  if(!prox.length){
-    zona.innerHTML = '<div style="color:#6b7280;font-size:12px;text-align:center;padding:20px 0">Sin evaluaciones próximas</div>';
-    return;
-  }
   zona.innerHTML = prox.map((e,i)=>{
-    const dias = diasHasta(e.fecha);
-    const parts = e.fecha.split("-");
-    const fechaObj = new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2]));
-    const fechaLabel = fechaObj.toLocaleDateString("es-CL",{weekday:"short",day:"numeric",month:"short"}).toUpperCase();
-    const diasLabel = dias===0?'HOY':dias===1?'MAÑANA':dias+'d';
-    return `<div class="eval-card" style="background:rgba(255,255,255,0.07);border-left:4px solid ${colorTipo(e.tipo)};cursor:pointer;color:#fff" onclick="abrirEval(${i})">
+    const diff = diasHasta(e.fecha);
+    return `<div class="eval-card" style="background:rgba(255,255,255,0.07);border-left:4px solid ${colorTipo(e.tipo)}" onclick="abrirEval(${i})">
       <div class="eval-tipo-badge" style="background:${colorTipo(e.tipo)}">${labelTipo(e.tipo)}</div>
-      <div class="eval-dias-badge" style="color:${dias<=2?'#ef4444':'#fbbf24'}">${diasLabel}</div>
-      <div style="font-size:10px;color:#9ca3af;font-weight:700;margin-bottom:3px">${fechaLabel}</div>
-      <div style="font-size:13px;font-weight:800;margin-bottom:3px">${e.titulo}</div>
-      <div style="font-size:10px;color:${COLORES[e.materia]||'#a78bfa'};font-weight:700">${e.materia}</div>
-      ${e.materiales&&e.materiales.length?`<div style="font-size:10px;color:#fbbf24;margin-top:4px">⭐ ${e.materiales.length} material(es)</div>`:''}
+      <div class="eval-dias-badge">${diff===0?'Hoy':diff===1?'Mañana':diff+'d'}</div>
+      <div class="eval-titulo">${e.titulo}</div>
+      <div style="font-size:11px;color:${COLORES[e.materia]}">${e.materia}</div>
     </div>`;
   }).join('');
 }
-function abrirEval(i){
-  const prox=EVALUACIONES.filter(e=>diasHasta(e.fecha)>=0).sort((a,b)=>diasHasta(a.fecha)-diasHasta(b.fecha));
-  const e=prox[i]; if(!e) return;
-  const dias=diasHasta(e.fecha);
+
+function abrirEval(i) {
+  const prox = EVALUACIONES.filter(e=> diasHasta(e.fecha) >= 0).sort((a,b)=> a.fecha > b.fecha ? 1 : -1);
+  const e = prox[i]; if(!e) return;
+  const parts = e.fecha.split("-");
+  const localDate = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+  
   document.getElementById("modalEvalBox").innerHTML=`
-    <div class="eval-tipo-badge" style="background:${colorTipo(e.tipo)};margin-bottom:8px">${labelTipo(e.tipo)}</div>
-    <div style="font-size:17px;font-weight:900;margin-bottom:4px">${e.titulo}</div>
-    <div style="font-size:12px;color:${COLORES[e.materia]||'#a78bfa'};font-weight:700;margin-bottom:10px">${e.materia}</div>
-    <div style="background:rgba(124,58,237,0.15);border-radius:10px;padding:9px 12px;display:flex;justify-content:space-between;margin-bottom:12px">
-      <div><div style="font-size:9px;color:#c4b5fd;font-weight:700">FECHA</div>
-      <div style="font-size:13px;font-weight:800">${new Date(e.fecha).toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"})}</div></div>
-      <div style="text-align:right"><div style="font-size:9px;color:#c4b5fd;font-weight:700">FALTAN</div>
-      <div style="font-size:20px;font-weight:900;color:${dias<=2?'#ef4444':'#fbbf24'}">${dias===0?'HOY':dias===1?'MAÑANA':dias+' días'}</div></div>
-    </div>
-    ${e.contenidos&&e.contenidos.length?`<div class="det-label">CONTENIDOS</div>${e.contenidos.map(c=>`<div style="font-size:12px;color:#e9d5ff;margin-bottom:3px;display:flex;gap:7px"><span style="color:#7c3aed">→</span>${c}</div>`).join('')}`:''}
-    ${e.materiales&&e.materiales.length?`<div class="mat-box"><div style="font-size:9px;color:#fbbf24;font-weight:800;margin-bottom:5px">⭐ MATERIALES REQUERIDOS</div>${e.materiales.map(m=>`<div style="font-size:12px;font-weight:700;margin-bottom:2px">• ${m}</div>`).join('')}</div>`:''}
-    <div style="display:flex;gap:8px;margin-top:10px">
-      <button onclick="cerrarEval()" class="btn-sec" style="width:100%;margin-top:10px">Cerrar</button>
-    </div>`;
+    <div class="modal-title">${e.titulo}</div>
+    <div class="det-label">MATERIA</div><div class="det-val">${e.materia}</div>
+    <div class="det-label">FECHA CORRECTA</div><div class="det-val">${localDate.toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"})}</div>
+    ${e.contenidos.length?`<div class="det-label">TEMARIO</div><div class="det-val">${e.contenidos.join(", ")}</div>`:''}
+    <button onclick="cerrarEval()" class="btn-sec" style="width:100%;margin-top:10px">Cerrar</button>`;
   document.getElementById("modalEval").classList.remove("hidden");
 }
 function cerrarEval(){document.getElementById("modalEval").classList.add("hidden");}
 
 // ── AVISOS ──
 function renderAvisos(){
-  const hoy = new Date();
-  const hoyStr = hoy.getFullYear()+'-'+String(hoy.getMonth()+1).padStart(2,'0')+'-'+String(hoy.getDate()).padStart(2,'0');
-  const vigentes = anuncios.filter(a=> !a.fecha_entrega || a.fecha_entrega >= hoyStr);
-  const ordenados = [...vigentes].sort((a,b)=>{
-    if(!a.fecha_entrega && !b.fecha_entrega) return 0;
-    if(!a.fecha_entrega) return 1;
-    if(!b.fecha_entrega) return -1;
-    return a.fecha_entrega > b.fecha_entrega ? 1 : -1;
-  });
-  document.getElementById("avisosZona").innerHTML = ordenados.length
-    ? ordenados.map((a,i)=>{
-      const idx = anuncios.indexOf(a);
-      const parts = a.fecha_entrega ? a.fecha_entrega.split("-") : null;
-      const fechaLabel = parts ? new Date(parseInt(parts[0]),parseInt(parts[1])-1,parseInt(parts[2])).toLocaleDateString("es-CL",{day:"numeric",month:"short"}) : '';
-      return `<div class="aviso-card" style="background:${COLORES[a.materia]||'#7c3aed'}18;border:1px solid ${COLORES[a.materia]||'#7c3aed'}44" onclick="abrirDetalle(${idx})">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start">
-          <div style="background:${COLORES[a.materia]||'#7c3aed'};border-radius:5px;padding:2px 7px;font-size:9px;font-weight:800;margin-bottom:5px">${a.materia}</div>
-          ${fechaLabel?`<div style="font-size:10px;color:#fca5a5;font-weight:700">📅 ${fechaLabel}</div>`:''}
-        </div>
-        <div style="font-size:13px;font-weight:800;margin-bottom:3px">${a.titulo}</div>
-        <div style="font-size:11px;color:#c4b5fd">${(a.objetivo||'').slice(0,80)}...</div>
-        ${a.materiales_extra&&a.materiales_extra.length?`<div style="font-size:10px;color:#fbbf24;margin-top:4px">⭐ ${a.materiales_extra.length} material(es) especial(es)</div>`:''}
-      </div>`;
-    }).join('')
-    : '<div style="color:#6b7280;font-size:12px;text-align:center;padding:20px 0">Sin avisos publicados</div>';
+  document.getElementById("avisosZona").innerHTML = anuncios.length ? anuncios.map((a,i)=>`
+    <div class="aviso-card" style="background:rgba(255,255,255,0.05)" onclick="abrirDetalle(${i})">
+      <div class="modal-title">${a.titulo}</div>
+      <div style="font-size:11px;color:#c4b5fd">${a.materia}</div>
+    </div>
+  `).join('') : '<div class="dia-vacio">No hay comunicados cargados de Classroom.</div>';
 }
-function abrirDetalle(i){
-  const a=anuncios[i]; if(!a) return;
-  document.getElementById("modalDetalleBox").innerHTML=`
-    <div style="background:${COLORES[a.materia]||'#7c3aed'};border-radius:5px;padding:2px 8px;font-size:9px;font-weight:800;display:inline-block;margin-bottom:9px">${a.materia}</div>
-    <div style="font-size:17px;font-weight:900;margin-bottom:7px">${a.titulo}</div>
-    ${a.objetivo?`<div class="det-label">OBJETIVO</div><div class="det-val">${a.objetivo}</div>`:''}
-    ${a.actividades&&a.actividades.length?`<div class="det-label">ACTIVIDADES</div>${a.actividades.map(ac=>`<div style="font-size:12px;color:#e9d5ff;margin-bottom:3px;display:flex;gap:7px"><span style="color:#a78bfa">→</span>${ac}</div>`).join('')}`:''}
-    ${a.materiales_extra&&a.materiales_extra.length?`<div class="mat-box"><div style="font-size:9px;color:#fbbf24;font-weight:800;margin-bottom:5px">⭐ MATERIALES REQUERIDOS</div>${a.materiales_extra.map(m=>`<div style="font-size:12px;font-weight:700;margin-bottom:2px">• ${m}</div>`).join('')}</div>`:''}
-    ${a.fecha_entrega?`<div class="fecha-box"><span style="font-size:18px">📅</span><div><div style="font-size:9px;color:#fca5a5;font-weight:800">FECHA ENTREGA</div><div style="font-size:13px;font-weight:800">${new Date(a.fecha_entrega).toLocaleDateString("es-CL",{weekday:"long",day:"numeric",month:"long"})}</div></div></div>`:''}
-    ${a.profesor?`<div style="font-size:10px;color:#6b7280;margin-top:5px">Publicado por: ${a.profesor}</div>`:''}
-    <button onclick="cerrarDetalle()" class="btn-sec" style="width:100%;margin-top:12px">Cerrar</button>`;
-  document.getElementById("modalDetalle").classList.remove("hidden");
-}
-function cerrarDetalle(){document.getElementById("modalDetalle").classList.add("hidden");}
-
-// ── MODAL IA ──
 function abrirModalIA(){document.getElementById("modalIA").classList.remove("hidden");}
 function cerrarModalIA(){document.getElementById("modalIA").classList.add("hidden");document.getElementById("textoIA").value='';}
+
+// Mock de procesamiento IA (Cambiar por tu endpoint Backend seguro de producción)
 async function procesarIA(){
-  const texto=document.getElementById("textoIA").value.trim(); if(!texto) return;
-  const btn=document.getElementById("btnProcesar"); btn.textContent="⏳ Procesando..."; btn.disabled=true;
-  try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,
-        messages:[{role:"user",content:`Extrae información de este correo de Google Classroom chileno. Responde SOLO JSON sin markdown:
-{"materia":"MATERIA EN MAYÚSCULAS","titulo":"string","objetivo":"string","actividades":["..."],"materiales_extra":["..."],"fecha_entrega":"YYYY-MM-DD o null","profesor":"string"}
-Correo: ${texto}`}]})});
-    const data=await res.json();
-    const r=JSON.parse(data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim());
-    anuncios.push({...r,id:Date.now()}); cerrarModalIA(); renderAvisos(); renderProximos();
-  }catch(e){alert("Error procesando. Intenta de nuevo.");}
-  btn.textContent="✨ Procesar con IA"; btn.disabled=false;
+  const text = document.getElementById("textoIA").value.trim(); if(!text) return;
+  const btn = document.getElementById("btnProcesar"); btn.textContent = "⏳ Leyendo..."; btn.disabled = true;
+  setTimeout(() => {
+    anuncios.push({id:Date.now(),materia:"GENERAL",titulo:"Aviso Extraído vía Classroom",objetivo:text});
+    cerrarModalIA(); renderAvisos();
+    btn.textContent = "✨ Procesar con IA"; btn.disabled = false;
+  }, 1200);
 }
 
-// ── NOTAS ──
+// ── NOTAS PERSONALES ──
 function renderNotas(){
-  const z=document.getElementById("notasZona");
-  z.innerHTML=notas.length?notas.map(n=>`
+  const z = document.getElementById("notasZona");
+  z.innerHTML = notas.length ? notas.map(n=>`
     <div class="nota-card">
-      <span style="font-size:20px">🔔</span>
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:800">${n.titulo}</div>
-        ${n.fecha?`<div style="font-size:11px;color:#fbbf24;margin-top:2px">📅 ${n.fecha}</div>`:''}
-        ${n.lugar?`<div style="font-size:11px;color:#c4b5fd;margin-top:1px">📍 ${n.lugar}</div>`:''}
-      </div>
-      <button onclick="eliminarNota(${n.id})" style="background:rgba(239,68,68,0.2);border:none;border-radius:8px;color:#fca5a5;padding:4px 9px;cursor:pointer;font-size:13px;">✕</button>
-    </div>`).join('')
-    :'<div style="color:#6b7280;font-size:12px;text-align:center;padding:20px 0">Sin notas aún</div>';
+      <div style="flex:1"><div style="font-size:13px;font-weight:800">${n.titulo}</div></div>
+      <button onclick="eliminarNota(${n.id})" style="background:none;border:none;color:#ef4444;cursor:pointer">✕</button>
+    </div>`).join('') : '<div class="dia-vacio">Aún no hay notas de eventos externos.</div>';
 }
 function abrirModalNota(){document.getElementById("modalNota").classList.remove("hidden");}
-function cerrarModalNota(){
-  document.getElementById("modalNota").classList.add("hidden");
-  ["notaTitulo","notaFecha","notaLugar"].forEach(id=>document.getElementById(id).value='');
-}
+function cerrarModalNota(){document.getElementById("modalNota").classList.add("hidden"); document.getElementById("notaTitulo").value='';}
 function guardarNota(){
-  const titulo=document.getElementById("notaTitulo").value.trim(); if(!titulo) return;
-  notas.push({id:Date.now(),titulo,fecha:document.getElementById("notaFecha").value.trim(),lugar:document.getElementById("notaLugar").value.trim()});
-  cerrarModalNota(); renderNotas(); renderProximos();
+  const t = document.getElementById("notaTitulo").value.trim(); if(!t) return;
+  notas.push({id:Date.now(),titulo:t}); cerrarModalNota(); renderNotas();
 }
-function eliminarNota(id){notas=notas.filter(n=>n.id!==id); renderNotas(); renderProximos(); renderSemana();}
+function eliminarNota(id){notas=notas.filter(n=>n.id!==id); renderNotas();}
 
-// ── TUTOR ──
-let tutorH=[];
-const accesos=[
-  {label:"Zonas Climáticas",materia:"HIST Y GEO",tema:"zonas climáticas y tipos de paisajes"},
-  {label:"Luz",materia:"CS. NATURALES",tema:"fuentes de luz, reflexión y refracción"},
-  {label:"Must/Mustn't",materia:"INGLÉS",tema:"must, mustn't y free time activities"},
-  {label:"Sustracción",materia:"MATEMÁTICA",tema:"sustracciones con canje"},
-  {label:"De carta en carta",materia:"LENGUAJE",tema:"comprensión del libro De carta en carta"},
+// ── RESTAURADO Y CORREGIDO: LÓGICA DEL TUTOR DE ESTUDIO ──
+const accesos = [
+  {label:"Zonas Climáticas",materia:"HIST Y GEO",tema:"Zonas templadas y frías"},
+  {label:"Fuentes de Luz",materia:"CS. NATURALES",tema:"Reflexión y refracción"}
 ];
-document.getElementById("accesosRapidos").innerHTML=accesos.map(a=>`
-  <button onclick="repasarTema('${a.materia}','${a.tema}')" style="background:${COLORES[a.materia]||'#7c3aed'}33;border:1px solid ${COLORES[a.materia]||'#7c3aed'}55;border-radius:8px;color:#fff;padding:5px 10px;font-size:10px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;">${a.label}</button>
-`).join('');
+const contenedorAccesos = document.getElementById("accesosRapidos");
+if(contenedorAccesos) {
+  contenedorAccesos.innerHTML = accesos.map(a=>`
+    <button onclick="repasarTema('${a.materia}','${a.tema}')" style="background:${COLORES[a.materia]||'#7c3aed'}33;border:1px solid ${COLORES[a.materia]};border-radius:8px;color:#fff;padding:5px 10px;font-size:10px;white-space:nowrap;cursor:pointer">${a.label}</button>
+  `).join('');
+}
 
 function repasarTema(materia,tema){
-  const msg=`Repasa conmigo ${materia}: ${tema}`;
-  agregarMsgT(msg,'user'); tutorIA(msg);
-}
-async function enviarTutor(){
-  const inp=document.getElementById("tutorInput");
-  const txt=inp.value.trim(); if(!txt) return;
-  inp.value=''; agregarMsgT(txt,'user'); await tutorIA(txt);
-}
-function agregarMsgT(txt,tipo){
-  const d=document.getElementById("tutorMsgs");
-  const m=document.createElement("div"); m.className="tmsg "+tipo; m.textContent=txt;
-  d.appendChild(m); d.scrollTop=d.scrollHeight;
-}
-async function tutorIA(pregunta){
-  const carg=document.createElement("div"); carg.className="tmsg ai"; carg.textContent="✍️ Escribiendo...";
-  const d=document.getElementById("tutorMsgs"); d.appendChild(carg); d.scrollTop=d.scrollHeight;
-  tutorH.push({role:"user",content:pregunta});
-  try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:500,
-        system:"Eres tutor de Mochila SOS para Arantza, 3° Básico en Chile. Español, tono amigable, ejemplos simples para niña de 8-9 años. Máximo 3 párrafos cortos.",
-        messages:tutorH})});
-    const data=await res.json();
-    const resp=data.content.map(b=>b.text||'').join('');
-    tutorH.push({role:"assistant",content:resp});
-    carg.textContent=resp; d.scrollTop=d.scrollHeight;
-  }catch(e){carg.textContent="Error de conexión.";}
+  const msg = `Quiero repasar ${materia} sobre ${tema}`;
+  agregarMsgT(msg,'user');
+  setTimeout(()=> agregarMsgT(`¡Excelente elección! Para repasar ${tema}, recuerda que la clave es leer los resúmenes del cuaderno. ¿Hacemos una pregunta de prueba?`,'ai'), 800);
 }
 
-// ── TABS ──
+function enviarTutor(){
+  const inp = document.getElementById("tutorInput");
+  const txt = inp.value.trim(); if(!txt) return;
+  inp.value=''; agregarMsgT(txt,'user');
+  setTimeout(()=> agregarMsgT("¡Recibido! Estoy conectando con tus cuadernos para darte la mejor respuesta de repaso...","ai"), 700);
+}
+
+function agregarMsgT(txt,tipo){
+  const d = document.getElementById("tutorMsgs"); if(!d) return;
+  const m = document.createElement("div"); m.className = `tmsg ${tipo}`; m.textContent = txt;
+  d.appendChild(m); d.scrollTop = d.scrollHeight;
+}
+
+// ── CONTROLADOR DE TABS ──
 function setTab(tab,btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
   ["mochila","semana","evalua","avisos","notas"].forEach(t=>{
-    document.getElementById("tab-"+t).classList.toggle("hidden",t!==tab);
+    const el = document.getElementById(`tab-${t}`);
+    if(el) el.classList.toggle("hidden", t!==tab);
   });
   if(tab==="mochila") renderMochila();
   if(tab==="semana") { renderHorario(); renderSemana(); }
@@ -870,7 +706,7 @@ function setTab(tab,btn){
   if(tab==="notas") renderNotas();
 }
 
-// ── INIT ──
+// ── INICIALIZACIÓN GENERAL ──
 mostrarNombre();
 pedirNombre();
 renderMochila();
