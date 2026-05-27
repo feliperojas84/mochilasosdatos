@@ -857,11 +857,12 @@ async function tutorIA(pregunta){
 }
 
 // ── TABS ──
-var TABS = ["mochila","semana","evalua","avisos","notas"];
 function setTab(tab,btn){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
-  TABS.forEach(t=>document.getElementById("tab-"+t).classList.toggle("hidden",t!==tab));
+  ["mochila","semana","evalua","avisos","notas"].forEach(t=>{
+    document.getElementById("tab-"+t).classList.toggle("hidden",t!==tab);
+  });
   if(tab==="mochila") renderMochila();
   if(tab==="semana") { renderHorario(); renderSemana(); }
   if(tab==="evalua") renderEvalua();
