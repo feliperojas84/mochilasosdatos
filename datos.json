@@ -1,19 +1,150 @@
 {
   "avisos": [
-    {"id":1,"materia":"D. HUMANO","titulo":"Taller de Relaciones Interpersonales","objetivo":"Conversar sobre la relación con compañeros en el aula.","actividades":["Observan video educativo","Comentan en conjunto"],"materiales_extra":["2 papeles lustres"],"fecha_entrega":"2026-05-18","profesor":"Jennifer Paola Oyarzún"},
-    {"id":2,"materia":"HIST Y GEO","titulo":"Semana del 25 de Mayo: Paisajes y Diorama","objetivo":"Reconocer los tipos de paisajes de cada zona climática y forma de vida de las personas.","actividades":["Observar y comentar páginas 38 a 43","Observar PPT explicativo","Completar guía de aprendizaje","Completar diorama de zonas climáticas"],"materiales_extra":["Carpeta de cartulina española","Lápices de colores","Tijera"],"fecha_entrega":"2026-05-28","profesor":"Maribel Igor Subiabre"},
-    {"id":3,"materia":"ARTES","titulo":"Inicio de Unidad de Modelado","objetivo":"Dar inicio a las actividades prácticas evaluadas del segundo bloque.","actividades":["Presentación PPT explicativo","Inicio de actividad práctica en sala"],"materiales_extra":["Plasticina"],"fecha_entrega":"2026-05-27","profesor":"Camila Constanza Villarroel Delis"},
-    {"id":4,"materia":"MÚSICA","titulo":"Evaluación instrumental — Cliff Jump, Pou","objetivo":"Práctica e interpretación instrumental evaluada.","actividades":["Práctica de Cliff Jump, Pou","Monitoreo de avance clase a clase"],"materiales_extra":["Instrumento musical (flauta)"],"fecha_entrega":"2026-06-03","profesor":"Claudio Águila Neiquel"},
-    {"id":5,"materia":"TECNOLOGÍA","titulo":"Creación de Objeto Tecnológico","objetivo":"Diseño y creación física de un objeto tecnológico.","actividades":["Ensamblaje, diseño y construcción del objeto planificado"],"materiales_extra":["Cartón ligero (caja de cereal o galletas)","Cinta adhesiva de papel (masking tape)"],"fecha_entrega":"2026-06-04","profesor":"Camila Constanza Villarroel Delis"}
+    {
+      "id": 1,
+      "materia": "D. HUMANO",
+      "titulo": "Taller de Relaciones Interpersonales",
+      "objetivo": "Conversar sobre la relación con compañeros en el aula.",
+      "actividades": [
+        "Observan video educativo",
+        "Comentan en conjunto"
+      ],
+      "materiales_extra": [
+        "2 papeles lustres"
+      ],
+      "fecha_entrega": "2026-05-18",
+      "profesor": "Jennifer Paola Oyarzún"
+    },
+    {
+      "id": 2,
+      "materia": "HIST Y GEO",
+      "titulo": "Semana del 25 de Mayo: Paisajes y Diorama",
+      "objetivo": "Reconocer los tipos de paisajes de cada zona climática y forma de vida de las personas.",
+      "actividades": [
+        "Observar y comentar páginas 38 a 43",
+        "Observar PPT explicativo",
+        "Completar guía de aprendizaje",
+        "Completar diorama de zonas climáticas"
+      ],
+      "materiales_extra": [
+        "Carpeta de cartulina española",
+        "Lápices de colores",
+        "Tijera"
+      ],
+      "fecha_entrega": "2026-05-28",
+      "profesor": "Maribel Igor Subiabre"
+    },
+    {
+      "id": 3,
+      "materia": "ARTES",
+      "titulo": "Inicio de Unidad de Modelado",
+      "objetivo": "Dar inicio a las actividades prácticas evaluadas del segundo bloque.",
+      "actividades": [
+        "Presentación PPT explicativo",
+        "Inicio de actividad práctica en sala"
+      ],
+      "materiales_extra": [
+        "Plasticina"
+      ],
+      "fecha_entrega": "2026-05-27",
+      "profesor": "Camila Constanza Villarroel Delis"
+    },
+    {
+      "id": 4,
+      "materia": "MÚSICA",
+      "titulo": "Evaluación instrumental — Cliff Jump, Pou",
+      "objetivo": "Práctica e interpretación instrumental evaluada.",
+      "actividades": [
+        "Práctica de Cliff Jump, Pou",
+        "Monitoreo de avance clase a clase"
+      ],
+      "materiales_extra": [
+        "Instrumento musical (flauta)"
+      ],
+      "fecha_entrega": "2026-06-03",
+      "profesor": "Claudio Águila Neiquel"
+    },
+    {
+      "id": 5,
+      "materia": "TECNOLOGÍA",
+      "titulo": "Creación de Objeto Tecnológico",
+      "objetivo": "Diseño y creación física de un objeto tecnológico.",
+      "actividades": [
+        "Ensamblaje, diseño y construcción del objeto planificado"
+      ],
+      "materiales_extra": [
+        "Cartón ligero (caja de cereal o galletas)",
+        "Cinta adhesiva de papel (masking tape)"
+      ],
+      "fecha_entrega": "2026-06-04",
+      "profesor": "Camila Constanza Villarroel Delis"
+    },
+    {
+      "materia": "MÚSICA",
+      "titulo": "Interpretación de instrumentos musicales - \"Cliff jump, pou\"",
+      "objetivo": "Evaluar el proceso de avance de cada estudiante en la interpretación de instrumentos musicales mediante la pieza \"Cliff jump, pou\".",
+      "actividades": [
+        "Interpretación de instrumentos musicales"
+      ],
+      "materiales_extra": [
+        "Material trabajado durante las semanas",
+        "Pauta de evaluación"
+      ],
+      "fecha_entrega": "2024-06-03",
+      "profesor": "claudio aguila neiquel",
+      "id": 1779880597116
+    }
   ],
   "evaluaciones_extra": [],
   "eventos_logistica": [
-    {"fecha":"2026-05-25","icon":"🩺","titulo":"Campaña Vacunación Influenza","desc":"Inmunización obligatoria por CESFAM Antonio Varas. Hasta el jueves 28.","color":"#8b5cf6"},
-    {"fecha":"2026-05-26","icon":"🕛","titulo":"Salida Temprana — 12:00 hrs","desc":"Ciclo de entrevistas de profesores. Retirar a las 12:00 hrs.","color":"#ef4444"},
-    {"fecha":"2026-05-26","icon":"👨‍👩‍👧","titulo":"Reunión de Apoderados — 19:00 hrs","desc":"Prof. Jefa Ms. Jennifer Oyarzún. 3° Básico B.","color":"#fbbf24"},
-    {"fecha":"2026-05-27","icon":"🩺","titulo":"Campaña Vacunación Influenza","desc":"Continúa vacunación CESFAM Antonio Varas.","color":"#8b5cf6"},
-    {"fecha":"2026-05-28","icon":"🩺","titulo":"Campaña Vacunación Influenza","desc":"Último día vacunación CESFAM Antonio Varas.","color":"#8b5cf6"},
-    {"fecha":"2026-09-09","icon":"🇨🇱","titulo":"Gala Folclórica 2026 — Día 1","desc":"Bajo el cielo austral: Danzas de la Patagonia","color":"#ef4444"},
-    {"fecha":"2026-09-10","icon":"🇨🇱","titulo":"Gala Folclórica 2026 — Día 2","desc":"Segunda jornada de la Gala Folclórica.","color":"#ef4444"}
+    {
+      "fecha": "2026-05-25",
+      "icon": "🩺",
+      "titulo": "Campaña Vacunación Influenza",
+      "desc": "Inmunización obligatoria por CESFAM Antonio Varas. Hasta el jueves 28.",
+      "color": "#8b5cf6"
+    },
+    {
+      "fecha": "2026-05-26",
+      "icon": "🕛",
+      "titulo": "Salida Temprana — 12:00 hrs",
+      "desc": "Ciclo de entrevistas de profesores. Retirar a las 12:00 hrs.",
+      "color": "#ef4444"
+    },
+    {
+      "fecha": "2026-05-26",
+      "icon": "👨‍👩‍👧",
+      "titulo": "Reunión de Apoderados — 19:00 hrs",
+      "desc": "Prof. Jefa Ms. Jennifer Oyarzún. 3° Básico B.",
+      "color": "#fbbf24"
+    },
+    {
+      "fecha": "2026-05-27",
+      "icon": "🩺",
+      "titulo": "Campaña Vacunación Influenza",
+      "desc": "Continúa vacunación CESFAM Antonio Varas.",
+      "color": "#8b5cf6"
+    },
+    {
+      "fecha": "2026-05-28",
+      "icon": "🩺",
+      "titulo": "Campaña Vacunación Influenza",
+      "desc": "Último día vacunación CESFAM Antonio Varas.",
+      "color": "#8b5cf6"
+    },
+    {
+      "fecha": "2026-09-09",
+      "icon": "🇨🇱",
+      "titulo": "Gala Folclórica 2026 — Día 1",
+      "desc": "Bajo el cielo austral: Danzas de la Patagonia",
+      "color": "#ef4444"
+    },
+    {
+      "fecha": "2026-09-10",
+      "icon": "🇨🇱",
+      "titulo": "Gala Folclórica 2026 — Día 2",
+      "desc": "Segunda jornada de la Gala Folclórica.",
+      "color": "#ef4444"
+    }
   ]
 }
