@@ -93,6 +93,27 @@
       "fecha_entrega": "2024-06-03",
       "profesor": "claudio aguila neiquel",
       "id": 1779880597116
+    },
+    {
+      "materia": "CS. NATURALES",
+      "titulo": "MUESTRA CIENTÍFICA 2026",
+      "objetivo": "Invitar a los estudiantes a participar en la Muestra Científica del colegio, la cual se realizará el miércoles 17 de junio durante la jornada de la mañana.",
+      "actividades": [
+        "Inscripción con el profesor(a) de Ciencias a través de correo electrónico.",
+        "Preparar un equipo de 2 a 4 estudiantes.",
+        "Preparar un trabajo o réplica de experimento siguiendo el método científico.",
+        "Incluir material tangible que apoye la exposición.",
+        "Avisar con anticipación si necesitarán enchufes o si trabajarán con agua u otra sustancia.",
+        "Mantener el espacio limpio y ordenado durante toda la jornada.",
+        "Traer su respectiva colación."
+      ],
+      "materiales_extra": [
+        "Espacio máximo de 1 metro de largo por 60 cm de ancho.",
+        "Póster o panel informativo (ajustado al espacio asignado)."
+      ],
+      "fecha_entrega": "null",
+      "profesor": "YOSELYN DEL PILAR VARGAS",
+      "id": 1779926706442
     }
   ],
   "evaluaciones_extra": [],
