@@ -114,6 +114,19 @@
       "fecha_entrega": "null",
       "profesor": "YOSELYN DEL PILAR VARGAS",
       "id": 1779926706442
+    },
+    {
+      "materia": "TECNOLOGÍA",
+      "titulo": "Materiales para clase de Tecnología",
+      "objetivo": "Creación de un objeto tecnológico en clases",
+      "actividades": [
+        "Traer cartón ligero (cajas de cereal u otros similares)",
+        "Traer material para pegar (cinta adhesiva de papel u otro)"
+      ],
+      "materiales_extra": [],
+      "fecha_entrega": null,
+      "profesor": "Camila Constanza Villarroel Delis",
+      "id": 1779927061986
     }
   ],
   "evaluaciones_extra": [],
