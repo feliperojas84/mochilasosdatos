@@ -127,6 +127,24 @@
       "fecha_entrega": null,
       "profesor": "Camila Constanza Villarroel Delis",
       "id": 1779927061986
+    },
+    {
+      "materia": "HISTORIA Y GEOGRAFÍA",
+      "titulo": "Pintado de dioramas",
+      "objetivo": "Finalizar el pintado de los dioramas en casa.",
+      "actividades": [
+        "Finalizar el pintado de los dioramas en casa.",
+        "Estudiar los contenidos de la Unidad 1, Lección 3 del texto escolar.",
+        "Apoyarse con los PPT y la guía (material disponible en Classroom de la semana del 25 de mayo)."
+      ],
+      "materiales_extra": [
+        "Material disponible en Classroom de la semana del 25 de mayo (colores de cada zona).",
+        "Cartulina española (recomendada para reforzar el paisaje).",
+        "PPT y guía (disponibles en Classroom de la semana del 25 de mayo)."
+      ],
+      "fecha_entrega": "2020-06-01",
+      "profesor": "maribel igor subiabre",
+      "id": 1780016665396
     }
   ],
   "evaluaciones_extra": [],
