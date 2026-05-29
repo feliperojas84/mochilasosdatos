@@ -129,22 +129,20 @@
       "id": 1779927061986
     },
     {
-      "materia": "HISTORIA Y GEOGRAFÍA",
-      "titulo": "Pintado de dioramas",
-      "objetivo": "Finalizar el pintado de los dioramas en casa.",
+      "materia": "CS. NATURALES",
+      "titulo": "Re-programación de Evaluación de Ciencias Naturales – 3° Básicos A y B",
+      "objetivo": "Informar la postergación de la prueba escrita sumativa de Ciencias Naturales para el viernes 05 de junio, con el fin de asegurar la consolidación de contenidos.",
       "actividades": [
-        "Finalizar el pintado de los dioramas en casa.",
-        "Estudiar los contenidos de la Unidad 1, Lección 3 del texto escolar.",
-        "Apoyarse con los PPT y la guía (material disponible en Classroom de la semana del 25 de mayo)."
+        "Repasar con las páginas del libro de la asignatura.",
+        "Utilizar el material de apoyo pedagógico adjunto."
       ],
       "materiales_extra": [
-        "Material disponible en Classroom de la semana del 25 de mayo (colores de cada zona).",
-        "Cartulina española (recomendada para reforzar el paisaje).",
-        "PPT y guía (disponibles en Classroom de la semana del 25 de mayo)."
+        "Libro de la asignatura",
+        "Material de apoyo pedagógico adjunto"
       ],
-      "fecha_entrega": "2020-06-01",
-      "profesor": "maribel igor subiabre",
-      "id": 1780016665396
+      "fecha_entrega": "2020-06-05",
+      "profesor": "Jennifer Oyarzún Cerpa",
+      "id": 1780016950974
     }
   ],
   "evaluaciones_extra": [],
