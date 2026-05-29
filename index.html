@@ -503,14 +503,17 @@ function renderMochilaBloque(offset, zonaId, titId, pctId, pctFillId){
   const key_prefix = offset===0 ? 'hoy' : 'manana';
   const fechaStr = getFechaStr(offset);
 
-  if(!DIAS.includes(nombreDia)){
-    document.getElementById(titId).textContent = '🎒 MOCHILA '+label;
-    document.getElementById(zonaId).innerHTML = '<div style="color:#6b7280;font-size:12px;padding:10px 0">No hay clases este día</div>';
+  const zonaEl = document.getElementById(zonaId);
+  const titEl = document.getElementById(titId);
+  const pctEl = document.getElementById(pctId);
+  const pctFillEl = document.getElementById(pctFillId);
+  if(!zonaEl || !titEl) return;
+    zonaEl.innerHTML = '<div style="color:#6b7280;font-size:12px;padding:10px 0">No hay clases este día</div>';
     return;
   }
 
   const sal = SALIDA_ESP[nombreDia]||'';
-  document.getElementById(titId).textContent = '🎒 MOCHILA '+label+(sal?' · '+sal:'');
+  titEl.textContent = '🎒 MOCHILA '+label+(sal?' · '+sal:'');
 
   // Extras de evaluaciones hardcodeadas
   const extrasEval = [];
@@ -585,10 +588,10 @@ function renderMochilaBloque(offset, zonaId, titId, pctId, pctFillId){
     html += '</div>';
   }
 
-  document.getElementById(zonaId).innerHTML = html;
+  zonaEl.innerHTML = html;
   const pct = totalItems ? Math.round(checkedItems/totalItems*100) : 0;
-  document.getElementById(pctId).textContent = pct+'%';
-  document.getElementById(pctFillId).style.width = pct+'%';
+  if(pctEl) pctEl.textContent = pct+'%';
+  if(pctFillEl) pctFillEl.style.width = pct+'%';
 }
 
 
@@ -878,14 +881,22 @@ function setTab(tab,btn){
 }
 
 // ── INIT ──
-mostrarNombre();
-pedirNombre();
-renderMochila();
-renderProximos();
-cargarDatosGitHub().then(()=>{
+function iniciar(){
+  mostrarNombre();
+  pedirNombre();
   renderMochila();
   renderProximos();
-});
+  cargarDatosGitHub().then(()=>{
+    renderMochila();
+    renderProximos();
+    renderAvisos();
+  });
+}
+if(document.readyState === "loading"){
+  document.addEventListener("DOMContentLoaded", iniciar);
+} else {
+  iniciar();
+}
 </script>
 </body>
 </html>
