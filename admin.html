@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mochila SOS — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);font-family:'Nunito',sans-serif;color:#fff;min-height:100vh;display:flex;justify-content:center;}
+#app{width:100%;max-width:480px;padding:20px 16px 40px;}
+.header{text-align:center;padding:20px 0 24px;}
+.sos-badge{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#ef4444,#dc2626);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:10px;}
+.header-title{font-size:24px;font-weight:900;}
+.header-sub{font-size:12px;color:#c4b5fd;margin-top:4px;}
+.card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:18px;margin-bottom:14px;}
+.card-title{font-size:13px;font-weight:900;color:#a78bfa;letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+textarea,input[type=text],input[type=password]{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:11px;color:#fff;padding:12px;font-size:13px;font-family:'Nunito',sans-serif;margin-bottom:10px;}
+textarea{height:160px;resize:none;}
+input::placeholder,textarea::placeholder{color:#6b7280;}
+.btn-pri{width:100%;background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;border-radius:12px;color:#fff;padding:14px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;transition:opacity 0.2s;}
+.btn-pri:disabled{opacity:0.5;cursor:not-allowed;}
+.btn-sec{width:100%;background:rgba(255,255,255,0.08);border:none;border-radius:12px;color:#fff;padding:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:8px;}
+.btn-danger{width:100%;background:rgba(239,68,68,0.2);border:1px solid rgba(239,68,68,0.3);border-radius:12px;color:#fca5a5;padding:10px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px;}
+.status{border-radius:10px;padding:10px 14px;font-size:12px;font-weight:700;margin-top:10px;text-align:center;}
+.status.ok{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#86efac;}
+.status.error{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;}
+.status.info{background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.3);color:#c4b5fd;}
+.label{font-size:11px;color:#9ca3af;font-weight:700;margin-bottom:5px;}
+.aviso-item{background:rgba(255,255,255,0.05);border-radius:10px;padding:10px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
+.aviso-item-txt{flex:1;}
+.aviso-titulo{font-size:13px;font-weight:800;}
+.aviso-meta{font-size:10px;color:#c4b5fd;margin-top:2px;}
+.evento-item{background:rgba(255,255,255,0.05);border-radius:10px;padding:10px 12px;margin-bottom:7px;display:flex;align-items:center;gap:10px;}
+.pin-screen{position:fixed;inset:0;background:linear-gradient(135deg,#0f0c29,#302b63);display:flex;align-items:center;justify-content:center;z-index:100;}
+.pin-box{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:30px 24px;width:100%;max-width:340px;text-align:center;}
+.pin-title{font-size:20px;font-weight:900;margin-bottom:6px;}
+.pin-sub{font-size:12px;color:#c4b5fd;margin-bottom:20px;}
+.hidden{display:none!important;}
+.tag{display:inline-block;border-radius:5px;padding:1px 7px;font-size:9px;font-weight:800;color:#fff;margin-left:6px;}
+.divider{height:1px;background:rgba(255,255,255,0.08);margin:14px 0;}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- PANTALLA PIN -->
+  <div class="pin-screen" id="pinScreen">
+    <div class="pin-box">
+      <div style="font-size:40px;margin-bottom:10px">🔐</div>
+      <div class="pin-title">Panel Admin</div>
+      <div class="pin-sub">Mochila SOS — Solo para el administrador</div>
+      <input type="password" id="pinInput" placeholder="Contraseña" style="text-align:center;font-size:16px;letter-spacing:4px;">
+      <button class="btn-pri" onclick="verificarPin()">Entrar</button>
+      <div id="pinError" class="status error hidden" style="margin-top:10px">Contraseña incorrecta</div>
+    </div>
+  </div>
+
+  <!-- PANEL PRINCIPAL -->
+  <div id="panelPrincipal" class="hidden">
+
+    <div class="header">
+      <div><span class="sos-badge">🆘 ADMIN</span></div>
+      <div class="header-title">🎒 Mochila SOS</div>
+      <div class="header-sub">Panel de administrador · 3°B The British School</div>
+    </div>
+
+    <!-- PEGAR CORREO CON IA -->
+    <div class="card">
+      <div class="card-title">✨ PEGAR CORREO DE CLASSROOM</div>
+      <div class="label">Pega el texto completo — la IA extrae todo y publica para todos</div>
+      <textarea id="textoCorreo" placeholder="Pega aquí el correo de Google Classroom..."></textarea>
+      <button class="btn-pri" id="btnPublicar" onclick="procesarYPublicar()">✨ Procesar y publicar para todos</button>
+      <div id="statusCorreo" class="hidden"></div>
+    </div>
+
+    <!-- NUEVO AVISO MANUAL -->
+    <div class="card">
+      <div class="card-title">📢 NUEVO AVISO DEL COLEGIO</div>
+      <div class="label">Materia</div>
+      <input type="text" id="avMateria" placeholder="Ej: HIST Y GEO, MATEMÁTICA, INGLÉS...">
+      <div class="label">Título</div>
+      <input type="text" id="avTitulo" placeholder="Ej: Semana del 25 de Mayo">
+      <div class="label">Objetivo / Descripción</div>
+      <textarea id="avObjetivo" placeholder="¿Qué dice el correo? Resumen breve..." style="height:90px"></textarea>
+      <div class="label">Actividades (separadas por coma)</div>
+      <input type="text" id="avActividades" placeholder="Ej: Completar guía, Ver páginas 38-43">
+      <div class="label">Materiales a llevar (separados por coma)</div>
+      <input type="text" id="avMateriales" placeholder="Ej: Cartulina española, Tijeras, Lápices">
+      <div class="label">Fecha de entrega (YYYY-MM-DD, opcional)</div>
+      <input type="text" id="avFecha" placeholder="2026-05-28">
+      <div class="label">Profesor/a</div>
+      <input type="text" id="avProfesor" placeholder="Ej: Maribel Igor Subiabre">
+      <button class="btn-pri" id="btnPublicar" onclick="publicarAviso()">📤 Publicar para todos</button>
+      <div id="statusCorreo" class="hidden"></div>
+    </div>
+
+    <!-- AGREGAR EVENTO LOGÍSTICO -->
+    <div class="card">
+      <div class="card-title">🚨 AGREGAR EVENTO LOGÍSTICO</div>
+      <div class="label">Fecha (YYYY-MM-DD)</div>
+      <input type="text" id="evFecha" placeholder="2026-06-10">
+      <div class="label">Título</div>
+      <input type="text" id="evTitulo" placeholder="Ej: Reunión de apoderados — 19:00 hrs">
+      <div class="label">Descripción</div>
+      <input type="text" id="evDesc" placeholder="Ej: Liderada por Prof. Jefa Ms. Jennifer">
+      <div class="label">Ícono</div>
+      <input type="text" id="evIcon" placeholder="👨‍👩‍👧">
+      <button class="btn-pri" onclick="agregarEvento()">📌 Publicar evento</button>
+      <div id="statusEvento" class="hidden"></div>
+    </div>
+
+    <!-- DATOS ACTUALES -->
+    <div class="card">
+      <div class="card-title">📋 DATOS PUBLICADOS AHORA</div>
+      <button class="btn-sec" onclick="cargarDatos()">↺ Recargar desde GitHub</button>
+      <div class="divider"></div>
+      <div class="label" style="margin-bottom:8px">AVISOS (${count})</div>
+      <div id="listaAvisos"></div>
+      <div class="divider"></div>
+      <div class="label" style="margin-bottom:8px">EVENTOS LOGÍSTICOS</div>
+      <div id="listaEventos"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const GITHUB_TOKEN = "";
+const GITHUB_REPO = "feliperojas84/mochilasosdatos";
+const GITHUB_FILE = "datos.json";
+const GITHUB_RAW = "https://raw.githubusercontent.com/"+GITHUB_REPO+"/main/"+GITHUB_FILE;
+const GITHUB_API = "https://api.github.com/repos/"+GITHUB_REPO+"/contents/"+GITHUB_FILE;
+const PIN_CORRECTO = "sos2026";
+
+let datosActuales = { avisos: [], evaluaciones_extra: [], eventos_logistica: [] };
+let fileSha = "";
+
+// ── PIN ──
+function verificarPin(){
+  const pin = document.getElementById("pinInput").value;
+  if(pin === PIN_CORRECTO){
+    document.getElementById("pinScreen").classList.add("hidden");
+    document.getElementById("panelPrincipal").classList.remove("hidden");
+    cargarDatos();
+  } else {
+    document.getElementById("pinError").classList.remove("hidden");
+  }
+}
+document.getElementById("pinInput").addEventListener("keypress", e=>{ if(e.key==="Enter") verificarPin(); });
+
+// ── CARGAR DATOS ──
+async function cargarDatos(){
+  try {
+    const res = await fetch(GITHUB_RAW+"?t="+Date.now());
+    datosActuales = await res.json();
+    // Obtener SHA para poder actualizar
+    const apiRes = await fetch(GITHUB_API, {
+      headers:{ "Authorization":"token "+GITHUB_TOKEN, "Accept":"application/vnd.github.v3+json" }
+    });
+    const apiData = await apiRes.json();
+    fileSha = apiData.sha;
+    renderDatos();
+  } catch(e){
+    mostrarStatus("statusCorreo","error","⚠️ Error cargando datos de GitHub");
+  }
+}
+
+function renderDatos(){
+  const avisos = datosActuales.avisos||[];
+  const eventos = datosActuales.eventos_logistica||[];
+  // Actualizar label count
+  document.querySelector('.label[style="margin-bottom:8px"]').textContent = `AVISOS (${avisos.length})`;
+  document.getElementById("listaAvisos").innerHTML = avisos.length
+    ? avisos.map((a,i)=>`
+      <div class="aviso-item">
+        <div class="aviso-item-txt">
+          <div class="aviso-titulo">${a.titulo} <span class="tag" style="background:#7c3aed">${a.materia||''}</span></div>
+          ${a.fecha_entrega?`<div class="aviso-meta">📅 Entrega: ${a.fecha_entrega}</div>`:''}
+          ${a.profesor?`<div class="aviso-meta">👩‍🏫 ${a.profesor}</div>`:''}
+        </div>
+        <button onclick="eliminarAviso(${i})" style="background:rgba(239,68,68,0.2);border:none;border-radius:7px;color:#fca5a5;padding:4px 8px;cursor:pointer;font-size:12px;">✕</button>
+      </div>`).join('')
+    : '<div style="color:#6b7280;font-size:12px;padding:8px 0">Sin avisos publicados</div>';
+
+  document.getElementById("listaEventos").innerHTML = eventos.length
+    ? eventos.map((e,i)=>`
+      <div class="evento-item">
+        <span style="font-size:20px">${e.icon||'📌'}</span>
+        <div style="flex:1">
+          <div style="font-size:12px;font-weight:800">${e.titulo}</div>
+          <div style="font-size:10px;color:#c4b5fd">${e.fecha} · ${e.desc||''}</div>
+        </div>
+        <button onclick="eliminarEvento(${i})" style="background:rgba(239,68,68,0.2);border:none;border-radius:7px;color:#fca5a5;padding:4px 8px;cursor:pointer;font-size:12px;">✕</button>
+      </div>`).join('')
+    : '<div style="color:#6b7280;font-size:12px;padding:8px 0">Sin eventos logísticos</div>';
+}
+
+// ── SUBIR A GITHUB VÍA VERCEL ──
+async function subirGitHub(nuevosDatos, mensaje){
+  const res = await fetch(VERCEL_GUARDAR, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ datos: nuevosDatos, mensaje })
+  });
+  if(!res.ok) throw new Error("Error guardando: "+res.status);
+  return await res.json();
+}
+
+const VERCEL_PROCESAR = "https://mochilasosdatos.vercel.app/api/procesar";
+const VERCEL_GUARDAR = "https://mochilasosdatos.vercel.app/api/guardar";
+
+// ── PROCESAR CORREO CON IA VÍA VERCEL ──
+async function procesarYPublicar(){
+  const texto = document.getElementById("textoCorreo").value.trim();
+  if(!texto){ mostrarStatus("statusCorreo","error","⚠️ Pega el texto del correo primero"); return; }
+  const btn = document.getElementById("btnPublicar");
+  btn.disabled = true; btn.textContent = "⏳ Procesando con IA...";
+  mostrarStatus("statusCorreo","info","🤖 Analizando correo...");
+  try {
+    const res = await fetch(VERCEL_PROCESAR, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ texto })
+    });
+    const resultado = await res.json();
+    if(resultado.error) throw new Error(resultado.error);
+
+    if(!datosActuales.avisos) datosActuales.avisos = [];
+    if(!datosActuales.evaluaciones_modificadas) datosActuales.evaluaciones_modificadas = [];
+
+    let mensajePublicado = "";
+
+    if(resultado.tipo === "reprogramacion"){
+      // Guardar como reprogramación
+      resultado.id = Date.now();
+      datosActuales.evaluaciones_modificadas.push(resultado);
+      // También agregar como aviso informativo
+      datosActuales.avisos.push({
+        id: Date.now()+1,
+        materia: resultado.materia,
+        titulo: "⚠️ REPROGRAMACIÓN: "+resultado.titulo,
+        objetivo: resultado.motivo,
+        actividades: [],
+        materiales_extra: [],
+        fecha_entrega: resultado.fecha_nueva,
+        profesor: resultado.profesor
+      });
+      mensajePublicado = `✅ Reprogramación detectada: ${resultado.materia} movida al ${resultado.fecha_nueva}`;
+    } else if(resultado.tipo === "evaluacion_nueva"){
+      // Agregar como evaluación y como aviso
+      resultado.id = Date.now();
+      datosActuales.avisos.push({
+        id: Date.now()+1,
+        materia: resultado.materia,
+        titulo: "📝 NUEVA EVALUACIÓN: "+resultado.titulo,
+        objetivo: `${resultado.tipo_eval} el ${resultado.fecha}`,
+        actividades: resultado.contenidos||[],
+        materiales_extra: resultado.materiales||[],
+        fecha_entrega: resultado.fecha,
+        profesor: resultado.profesor
+      });
+      mensajePublicado = `✅ Nueva evaluación agregada: ${resultado.materia} el ${resultado.fecha}`;
+    } else {
+      // Aviso normal
+      resultado.id = Date.now();
+      datosActuales.avisos.push(resultado);
+      mensajePublicado = `✅ Aviso publicado: ${resultado.titulo}`;
+    }
+
+    await subirGitHub(datosActuales, "Procesado: "+resultado.titulo);
+    document.getElementById("textoCorreo").value = "";
+    mostrarStatus("statusCorreo","ok", mensajePublicado);
+    renderDatos();
+  } catch(e){
+    mostrarStatus("statusCorreo","error","❌ Error: "+e.message);
+  }
+  btn.disabled = false; btn.textContent = "✨ Procesar y publicar para todos";
+}
+
+// ── PUBLICAR AVISO MANUAL ──
+async function publicarAviso(){
+  const materia = document.getElementById("avMateria").value.trim().toUpperCase();
+  const titulo = document.getElementById("avTitulo").value.trim();
+  const objetivo = document.getElementById("avObjetivo").value.trim();
+  const actTxt = document.getElementById("avActividades").value.trim();
+  const matTxt = document.getElementById("avMateriales").value.trim();
+  const fecha = document.getElementById("avFecha").value.trim();
+  const profesor = document.getElementById("avProfesor").value.trim();
+  if(!titulo){ mostrarStatus("statusCorreo","error","⚠️ El título es obligatorio"); return; }
+  const btn = document.getElementById("btnPublicar");
+  btn.disabled = true; btn.textContent = "📤 Publicando...";
+  mostrarStatus("statusCorreo","info","📤 Subiendo a GitHub...");
+  try {
+    const aviso = {
+      id: Date.now(),
+      materia: materia||"GENERAL",
+      titulo,
+      objetivo,
+      actividades: actTxt ? actTxt.split(",").map(s=>s.trim()).filter(Boolean) : [],
+      materiales_extra: matTxt ? matTxt.split(",").map(s=>s.trim()).filter(Boolean) : [],
+      fecha_entrega: fecha||null,
+      profesor
+    };
+    if(!datosActuales.avisos) datosActuales.avisos = [];
+    datosActuales.avisos.push(aviso);
+    await subirGitHub(datosActuales, "Nuevo aviso: "+titulo);
+    ["avMateria","avTitulo","avObjetivo","avActividades","avMateriales","avFecha","avProfesor"]
+      .forEach(id=>document.getElementById(id).value="");
+    mostrarStatus("statusCorreo","ok","✅ ¡Publicado! Todos los apoderados ya lo ven.");
+    renderDatos();
+  } catch(e){
+    mostrarStatus("statusCorreo","error","❌ Error: "+e.message);
+  }
+  btn.disabled = false; btn.textContent = "📤 Publicar para todos";
+}
+
+// ── AGREGAR EVENTO LOGÍSTICO ──
+async function agregarEvento(){
+  const fecha = document.getElementById("evFecha").value.trim();
+  const titulo = document.getElementById("evTitulo").value.trim();
+  const desc = document.getElementById("evDesc").value.trim();
+  const icon = document.getElementById("evIcon").value.trim() || "📌";
+  if(!fecha||!titulo){ mostrarStatus("statusEvento","error","⚠️ Fecha y título son obligatorios"); return; }
+  mostrarStatus("statusEvento","info","📤 Publicando evento...");
+  try {
+    if(!datosActuales.eventos_logistica) datosActuales.eventos_logistica = [];
+    datosActuales.eventos_logistica.push({fecha, icon, titulo, desc, color:"#ef4444"});
+    await subirGitHub(datosActuales, "Nuevo evento: "+titulo);
+    ["evFecha","evTitulo","evDesc","evIcon"].forEach(id=>document.getElementById(id).value="");
+    mostrarStatus("statusEvento","ok","✅ Evento publicado para todos.");
+    renderDatos();
+  } catch(e){
+    mostrarStatus("statusEvento","error","❌ Error: "+e.message);
+  }
+}
+
+// ── ELIMINAR ──
+async function eliminarAviso(i){
+  if(!confirm("¿Eliminar este aviso?")) return;
+  datosActuales.avisos.splice(i,1);
+  await subirGitHub(datosActuales, "Aviso eliminado");
+  renderDatos();
+}
+async function eliminarEvento(i){
+  if(!confirm("¿Eliminar este evento?")) return;
+  datosActuales.eventos_logistica.splice(i,1);
+  await subirGitHub(datosActuales, "Evento eliminado");
+  renderDatos();
+}
+
+// ── HELPERS ──
+function mostrarStatus(id, tipo, msg){
+  const el = document.getElementById(id);
+  el.className = "status "+tipo;
+  el.textContent = msg;
+  el.classList.remove("hidden");
+}
+</script>
+</body>
+</html>
